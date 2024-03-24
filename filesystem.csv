@@ -1,17 +1,17 @@
 Directory;Description;Interesting files
-/bin;Binaries needed for the system to boot and run;
+/bin;Binaries needed for the system to boot and run (Ubuntu simlinks to /usr/bin);
 /boot;Kernel, drivers and boot loader;./grub/grub.conf
 /dev;Devices (which like everything else are files);
 /etc;System-wide config files, shell scripts for booting;crontab (defines when will automated jobs run), fstab (table of storage devices and mounting points), passwd (list of the user accounts);
 /home;Where all the users have their personal directory, not to be confused with ~;
-/lib;Shared libraries (lib c and so on);
+/lib;Shared libraries (lib c and so on) (Ubuntu simlinks to /usr/lib);
 /lost+found;Used in case of file system corruption. Usually empty.;
 /media;Typical mount point for USB drives and such;
 /mnt;The older mount point;
 /opt;"Optional" software (by which it's meant "commercial");
 /proc;Virtual files created by the kernel so that you can see what's going on with it;
 /root;The directory for the root account, not to be confused with /, which is the root of the file system.;
-/sbin;System binaries, required to run the system;
+/sbin;System binaries, required to run the system (Ubuntu simlinks to /usr/sbin);
 /tmp;Temporary files created by programs. Likely flushed after reboot.;
 /usr;Huge. Contains most of the programs used by users;
 /usr/bin;Programs installed by the distro (I guess they get added here when you use a package manager as well);
