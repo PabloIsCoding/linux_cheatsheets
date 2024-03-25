@@ -1,0 +1,9 @@
+Wildcard;Meaning
+?;Matches single character
+[adx];Matches either the character a, d, or x
+[!adx];Matches anything *but* characters a, d, or x
+[[:alnum:]];Matches any alphanumeric character (so for ex won't match . , _ :)
+[[:alpha:]];Shorthand for [a-zA-Z], but it's more robust to the config of the specific distro
+[[:digit:]];Shorthand for [0-9], but it's more robust to the config of the specific distro
+[[:lower:]];Matches any lowercase character
+[[:upper:]];Matches any uppercase character

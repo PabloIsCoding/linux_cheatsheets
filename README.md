@@ -4,9 +4,14 @@ This is a poor man's solution to my lack of memory. They are just CSV files that
 
 ## Usage
 
-Add to your `.bashrc` an alias like:
-`alias fs="column -ts ';' -W 2 -W 3 ~/linux_cheatsheets/filesystem.csv"`
-With this you can type `fs` at any point in the shell and the cheatsheet will display in a nice format.
+Add to your `.bashrc` the following lines: 
+```
+alias fs="column -ts ';' -W 2 -W 3 ~/linux_cheatsheets/filesystem.csv"
+alias commands="column -ts ';' -W 2 ~/linux_cheatsheets/commands.csv"
+alias wildcards="column -ts ';' -W 2 ~/linux_cheatsheets/wildcards.csv"
+```
+With this you can type `fs`, `commands` or `wildcards` at any point in the shell and the selected cheatsheet will display in a nice format.
+
 
 ## TODO
 * Add a cheatsheet for *useful* command options that I often forget
