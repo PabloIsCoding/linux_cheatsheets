@@ -3,3 +3,4 @@ cp -u --update somefile(s) target_dir;Copies somefile(s) unless there is a *newe
 cp -a --archive somefile(s) target_dir;Copies somefile(s) with the original permissions and ownerships (the default is putting the ones of the user issuing the command)
 cp -i --interactive somefile(s) target_dir;Prompts the user to confirm before overwriting any file
 cp -v --verbose somefile(s) target_dir;Display what's been done
+ls -li directory;Shows the files in a directory in long format, *but the first column is a unique identifier of the data of a file*. If two files share the same "inode" number, one was created as a hard link.
