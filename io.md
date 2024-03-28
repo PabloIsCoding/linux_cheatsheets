@@ -1,4 +1,4 @@
-# IO notes
+# IO redirection notes
 
 ## Redirection operators (`>`, `>>`)
 
@@ -35,5 +35,15 @@ Of course, we can also use `>>`, except in the traditional style. For example, `
 To discard outputs of the program, redirect to `/dev/null` (which is not really a directory). For example `ls somedir 2> /dev/null`.
 
 ## Pipeline operator (`|`)
+
+While the redirection operators `>`and `>>` send stdout/stderr to a file, with the pipe operator we can send it to the stdin of another command.
+
+For example, we don't do `ls > less` (which would create a file named `less`), we do `ls | less` because `less` is a command.
+
+Some useful commands to pipe into are `sort`, `uniq`, `wc`, `tee`.
+
+## The `tee` command
+
+There are cases where you want to redirect stdout both to a file and down the pipe. `tee` does this easily. Example: `ls | tee ls.txt | wc -l`. This will write the output of ls into `ls.txt` and also pipe it to `wc -l` to count the number of lines and print it into the terminal.
 
 
