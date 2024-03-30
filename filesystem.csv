@@ -2,7 +2,7 @@ Directory;Description;Interesting files
 /bin;Binaries needed for the system to boot and run (Ubuntu simlinks to /usr/bin);
 /boot;Kernel, drivers and boot loader;./grub/grub.conf
 /dev;Devices (which like everything else are files);
-/etc;System-wide config files, shell scripts for booting;crontab (defines when will automated jobs run), fstab (table of storage devices and mounting points), passwd (list of the user accounts);
+/etc;System-wide config files, shell scripts for booting;crontab (defines when will automated jobs run), fstab (table of storage devices and mounting points), passwd (list of the user accounts), group (list of the groups);
 /home;Where all the users have their personal directory, not to be confused with ~;
 /lib;Shared libraries (lib c and so on) (Ubuntu simlinks to /usr/lib);
 /lost+found;Used in case of file system corruption. Usually empty.;

@@ -6,4 +6,6 @@ cp -v --verbose somefile(s) target_dir;Display what's been done
 ls -li directory;Shows the files in a directory in long format, *but the first column is a unique identifier of the data of a file*. If two files share the same "inode" number, one was created as a hard link.
 info;Like the man pages but with hyperlinks and friendlier explanations. This is a GNU addition, may not work in all distros. Type `info info` and hit H for a list of keyboard shortcuts
 type somecommand;Tells you whether somecommand is a shell builtin, an alias, and so on. Useful also to see if there exists a command with that name
-tail -f somefile;See the last 10 lines of a file that might be changing in real time. Ctrl+C to close.
+tail -f somefile;See the last 10 lines of a file that might be changing in real time. Ctrl+C to close
+printenv;Displays all the environment variables. It's useful to pipe this into `sort` and `less`
+echo -e;Enable Escape Sequences (like for example \n)
