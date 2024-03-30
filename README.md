@@ -9,6 +9,7 @@ Add to your `.bashrc` the following lines:
 alias fs="column -ts ';' -W 2 -W 3 ~/linux_cheatsheets/filesystem.csv"
 alias commands="column -ts ';' -W 2 ~/linux_cheatsheets/commands.csv"
 alias wildcards="column -ts ';' -W 2 ~/linux_cheatsheets/wildcards.csv"
+alias octal="column -ts ';' -W 2 -W 3 ~/linux_cheatsheets/octal.csv"
 ```
 With this you can type `fs`, `commands` or `wildcards` at any point in the shell and the selected cheatsheet will display in a nice format.
 
