@@ -8,4 +8,13 @@ info;Like the man pages but with hyperlinks and friendlier explanations. This is
 type somecommand;Tells you whether somecommand is a shell builtin, an alias, and so on. Useful also to see if there exists a command with that name
 tail -f somefile;See the last 10 lines of a file that might be changing in real time. Ctrl+C to close
 printenv;Displays all the environment variables. It's useful to pipe this into `sort` and `less`
-echo -e;Enable Escape Sequences (like for example \n)
+echo -e somestuff;Enable Escape Sequences (like for example \n) and echoes `somestuff`
+umask;Returns the default value of the permissions mask. In Ubuntu, this mask is 0002, which in binary is 000 000 000 010, which turns --- rw- rw- rw- into --- rw- rw- r--
+umask 0227;This example makes it so that all new files get the following permissions: --- rw- rw- rw- + 0227 (binary= 000 010 010 111) = --- r-- r-- ---. If you just want to experiment remember to go back to 0002 afterwards!
+ps x;Snapshot of all processes regardless of what terminal created them (if any). STAT is STATE (R=Running, S*=Sleep, <=High priority process, N=Nice process (low priority))
+top;Like ps but real time
+kill somePID(s);Sends a TERM (Terminate) signal to the process. The process might ignore it or be unable to obey
+kill -KILL somePID(s);Tells the kernel to terminate the process
+kill -someoption somePID;someoption can be STOP:Pauses the process through the kernel, can't be ignored, TSTP: like Stop, but the process might ignore it
+kill -l;See all the available signals (they all start with SIG but you don't need to type SIG)
+killall;Perhaps more convenient than kill, since you can specify the process by name instead of PID, and has more options

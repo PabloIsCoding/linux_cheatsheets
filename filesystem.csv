@@ -1,5 +1,5 @@
 Directory;Description;Interesting files
-/bin;Binaries needed for the system to boot and run (Ubuntu simlinks to /usr/bin);
+/bin;Programs needed for the system to boot and run (Ubuntu simlinks to /usr/bin);
 /boot;Kernel, drivers and boot loader;./grub/grub.conf
 /dev;Devices (which like everything else are files);
 /etc;System-wide config files, shell scripts for booting;crontab (defines when will automated jobs run), fstab (table of storage devices and mounting points), passwd (list of the user accounts), group (list of the groups);
@@ -14,7 +14,7 @@ Directory;Description;Interesting files
 /sbin;System binaries, required to run the system (Ubuntu simlinks to /usr/sbin);
 /tmp;Temporary files created by programs. Likely flushed after reboot.;
 /usr;Huge. Contains most of the programs used by users;
-/usr/bin;Programs installed by the distro (I guess they get added here when you use a package manager as well);
+/usr/bin;Programs installed by the distro. Despite the name `bin` doesn't contain only binaries but also bash and python scripts, for example 
 /usr/lib;Shared libraries for the programs in /usr/bin;
 /usr/local;This is where the admin puts programs that are supposed to run for all users;
 /usr/sbin;More system admin programs;
