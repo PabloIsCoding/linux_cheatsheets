@@ -1,4 +1,4 @@
-# IO redirection notes
+# Bash notes
 
 ## Redirection operators (`>`, `>>`)
 
@@ -46,4 +46,22 @@ Some useful commands to pipe into are `sort`, `uniq`, `wc`, `tee`.
 
 There are cases where you want to redirect stdout both to a file and down the pipe. `tee` does this easily. Example: `ls | tee ls.txt | wc -l`. This will write the output of ls into `ls.txt` and also pipe it to `wc -l` to count the number of lines and print it into the terminal.
 
+## The `xargs` command
 
+Some commands won't accept `stdin`. Others will behave differently when receiving `stdin` than when receiving parameters. With `xargs` we can control this. `xargs` turns `stdin` into a bunch of parameters for the next command.
+
+For example, suppose that in a directory we only have two files: `hi4.txt` (4 lines long) and `bye5.txt` (5 lines long). If we do:
+* `ls | wc -l` we get `2`, because `wc -l` only sees 2 lines in the `stdin` (`bye5.txt` and `hi4.txt`). This output would have been almost the same if we had some file named `foo` with the content `bye5.txt\nhi4.txt`. `wc -l` sees only 2 lines, doesn't try to search for those two files.
+* `ls | xargs wc -l` we get:
+
+```
+5 bye5.txt
+4 hi4.txt
+9 total
+```
+
+We get *exactly* the same if we do `wc -l bye5.txt hi4.txt`. `xargs` is doing the conversion for us, programatically.
+
+One relatively useful example: `find ( -type f ) -and ( someotherfilter ) | xargs grep somepattern`. This finds all the files in the cwd and "downwards" recursively that fit some criteria and pipes them as arguments to `grep`. `grep` does have the option `-r` to do recursive, so you could do `grep -r somepattern *`, but you might be passing too many files that way and getting a huge output if the pattern is present in a lot of files.
+
+**NOTE** since linux accepts filenames with spaces and even newline characters, a more robust version of the example is: `find ( -type f ) -and ( someotherfilter ) -print0 | xargs --null grep somepattern`. The `-print0` sets the output of `find` to be separated by the ASCII null character, as opposed to a newline. The `--null` option in `xargs` is used so that `xargs` understands such input.

@@ -18,3 +18,9 @@ kill -KILL somePID(s);Tells the kernel to terminate the process
 kill -someoption somePID;someoption can be STOP:Pauses the process through the kernel, can't be ignored, TSTP: like Stop, but the process might ignore it
 kill -l;See all the available signals (they all start with SIG but you don't need to type SIG)
 killall;Perhaps more convenient than kill, since you can specify the process by name instead of PID, and has more options
+find ~ -type [f|d];Find files (f) or directories (d) recursively starting from ~
+find ~ -name "*.mp3";Find files whose name ends in .mp3, recursively searching from ~
+find ~ -size +3M;Find files that occupy more than 3MB
+find ~ -cmin -38;Find files modified 38 minutes ago or less
+find ~ -samefile .bashrc;Find hardlinks to .bashrc
+find ~ \( -size -2M\ ) -and \( -cmin +20 \);Match any file that is less than 2MB and was modified 20 min ago or less (there is also `-or`, `-not`). The spaces are important, i.e., write ( expression ), not (expression)
