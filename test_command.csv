@@ -1,0 +1,24 @@
+Expression;True if:;Bash Alternative
+file1 -ef file2;file1 and file2 have the same inode numbers (i.e. one of them was created as a hard link)
+-e file;file exists
+-d file;file exists and is a directory
+-f file;file exists and is a regular file
+-L file;file exists and is a symbolic link
+-r file;file exists and is readable
+-s file;file exists and has length > 0
+-w file;file exists and is writeable
+somestring;somestring is not null
+-n somestring;somestring has length > 0
+-z somestring;somestring has length = 0
+string1 = string2;Both strings are equal (POSIX compliant);string1 == string2
+string1 != string2;Not equal
+int1 -eq int2;int1 == int2;((int1 == int2))
+int1 -ne int2;int1 != int2;((int1 != int2))
+int1 -le int2;int1 <= int2;((int1 <= int2))
+int1 -lt int2;int1 < int2;((int1 < int2))
+int1 -ge int2;int1 >= int2;((int1 >= int2))
+int1 -gt int2;int1 > int1;((int1 > int2))
+[[ string1 =~ regex]];string1 matches regex (Bash only, it's not really `test`)
+[ expression1 -a expression2 ];expression1 AND expression2;expression1 && expression2
+[ expression1 -o expression2 ];expression1 OR expression2;expression1 && expression2
+[ !\( expression \)];NOT expression;[[ !( expression )]] (No need for backslash)

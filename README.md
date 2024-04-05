@@ -15,5 +15,5 @@ With this you can type `fs`, `commands` or `wildcards` at any point in the shell
 
 
 ## TODO
-* Add a cheatsheet for *useful* command options that I often forget
 * Actually remove the filesystem cheatsheet in favor of a program (for example `fs_help /usr/bin` would explain what the directory `/usr/bin/` is about). This is the rich man's solution.
+* Revise the `text_command.csv` with examples instead of being so abstract. Use ch27 of TLCM to do this.
